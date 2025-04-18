@@ -1,9 +1,12 @@
+import 'package:ai_assistant/helper/pref.dart';
 import 'package:ai_assistant/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  //init hive
+  Pref.initialize();
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,DeviceOrientation.portraitDown]);
   runApp(const MyApp());
