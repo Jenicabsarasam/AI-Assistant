@@ -2,6 +2,8 @@ import 'package:ai_assistant/helper/global.dart';
 import 'package:ai_assistant/model/onboard.dart';
 import 'package:ai_assistant/screen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:lottie/lottie.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -76,7 +78,8 @@ class OnboardingScreen extends StatelessWidget {
             ),
             onPressed: (){
               if(isLast){
-                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>const HomeScreen()));
+                Get.off(()=>const HomeScreen());
+                //Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>const HomeScreen()));
               }
               else{
                 c.nextPage(duration: const Duration(milliseconds: 700), curve: Curves.ease);
