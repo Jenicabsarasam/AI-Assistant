@@ -1,6 +1,7 @@
 import 'package:ai_assistant/helper/global.dart';
 import 'package:ai_assistant/model/home_type.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lottie/lottie.dart';
 
 class HomeCard extends StatelessWidget {
@@ -9,6 +10,7 @@ class HomeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   // Animate.restartOnHotReload=true;
     return Card(
       color: const Color.fromARGB(255, 192, 191, 238).withOpacity(0.15),
       elevation: 0,
@@ -64,6 +66,6 @@ class HomeCard extends StatelessWidget {
           
         ],
       ),
-    );
+    ).animate().scale(duration: 2 .seconds,curve: Curves.ease);
   }
 }
